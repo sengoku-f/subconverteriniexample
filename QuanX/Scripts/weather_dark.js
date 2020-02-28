@@ -332,22 +332,22 @@ function getAqiInfo(aqi) {
     var aqiDesc = "";
     var aqiWarning = "";
     if (aqi > 300) {
-        aqiDesc = `${config.show.icon?'🟤':''}严重污染`;
+        aqiDesc = `${config.show.icon?'🖤':''}严重污染`;
         aqiWarning = "儿童、老人、呼吸系统等疾病患者及一般人群停止户外活动";
     } else if (aqi > 200) {
-        aqiDesc = `${config.show.icon?'🟣':''}重度污染`;
+        aqiDesc = `${config.show.icon?'💜':''}重度污染`;
         aqiWarning = "儿童、老人、呼吸系统等疾病患者及一般人群停止或减少户外运动";
     } else if (aqi > 150) {
-        aqiDesc = `${config.show.icon?'🔴':''}中度污染`;
+        aqiDesc = `${config.show.icon?'❤️':''}中度污染`;
         aqiWarning = "儿童、老人、呼吸系统等疾病患者及一般人群减少户外活动";
     } else if (aqi > 100) {
-        aqiDesc = `${config.show.icon?'🟠':''}轻度污染`;
+        aqiDesc = `${config.show.icon?'🧡':''}轻度污染`;
         aqiWarning = "老人、儿童、呼吸系统等疾病患者减少长时间、高强度的户外活动";
     } else if (aqi > 50) {
-        aqiDesc = `${config.show.icon?'🟡':''}良好`;
+        aqiDesc = `${config.show.icon?'💛':''}良好`;
         aqiWarning = "极少数敏感人群应减少户外活动";
     } else {
-        aqiDesc = `${config.show.icon?'🟢':''}优`;
+        aqiDesc = `${config.show.icon?'💚':''}优`;
     }
     return {
         aqi,
