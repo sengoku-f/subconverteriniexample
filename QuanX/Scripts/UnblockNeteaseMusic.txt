@@ -1,0 +1,7 @@
+shadowsocks=music.desperadoj.com:30003, method=aes-128-gcm, password=desperadoj.com, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐
+
+shadowsocks=music.desperadoj.com:30001, method=aes-128-gcm, password=desperadoj.com, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐1
+
+http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐3
+
+http=149.129.111.157:9998,fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐4
