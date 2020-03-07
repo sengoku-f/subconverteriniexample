@@ -5,3 +5,5 @@ shadowsocks=music.desperadoj.com:30001, method=aes-128-gcm, password=desperadoj.
 http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐3
 
 http=149.129.111.157:9998,fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐4
+
+http=47.102.220.211:8848, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐5_sabrina
