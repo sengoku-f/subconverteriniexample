@@ -1,0 +1,13 @@
+shadowsocks=music.desperadoj.com:30003, method=aes-128-gcm, password=desperadoj.com, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐
+shadowsocks=music.desperadoj.com:30001, method=aes-128-gcm, password=desperadoj.com, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐1
+http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐3
+http=149.129.111.157:9998,fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐4
+http=47.102.220.211:8848, fast-open=false, udp-relay=false, tag=🎧 解锁网易云音乐5_sabrina
+vmess=ffv1.dynu.net:2020, method=none, password=0fea84a8-56be-11ea-9c2a-0050569119bc, tag=🇨🇦 加拿大免费
+
+🎧 解锁网易云音乐
+ss://YWVzLTEyOC1nY206ZGVzcGVyYWRvai5jb20=@music.desperadoj.com:30003#%F0%9F%8E%A7%20%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90
+🎧 解锁网易云音乐1
+ss://YWVzLTEyOC1nY206ZGVzcGVyYWRvai5jb20=@music.desperadoj.com:30001#%F0%9F%8E%A7%20%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%901
+🇨🇦 加拿大免费
+vmess://bm9uZTowZmVhODRhOC01NmJlLTExZWEtOWMyYS0wMDUwNTY5MTE5YmNAZmZ2MS5keW51Lm5ldDoyMDIw?remarks=%E5%8A%A0%E6%8B%BF%E5%A4%A7-TCP-%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F&obfs=none
