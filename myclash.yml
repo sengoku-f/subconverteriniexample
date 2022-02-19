@@ -1,0 +1,22 @@
+#---------------------------------------------------#
+## 配置文件需要放置在 $HOME/.config/clash/*.yaml
+
+## 这份文件是clashX的基础配置文件，请尽量新建配置文件进行修改。
+## ！！！只有这份文件的端口设置会随ClashX启动生效
+
+## 如果您不知道如何操作，请参阅 SS-Rule-Snippet：https://github.com/Hackl0us/SS-Rule-Snippet/blob/master/LAZY_RULES/clash.yaml
+## 或者官方Github文档 https://github.com/Dreamacro/clash/blob/master/README.md
+#---------------------------------------------------#
+
+# HTTP（S）和SOCKS5服务器在同一端口上
+mixed-port: 1080
+
+# 允许局域网的连接（可用来共享代理）
+allow-lan: true
+
+# 规则模式：Rule（规则） / Global（全局代理）/ Direct（全局直连）
+mode: Rule
+
+proxies:
+  - {name: "🎧 网易云音乐解锁", server: 124.222.0.143, port: 6700, type: http, username: unblock-netease-music, password: unblock-netease-music}
+
