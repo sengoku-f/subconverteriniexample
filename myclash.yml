@@ -18,5 +18,4 @@ allow-lan: true
 mode: Rule
 
 proxies:
-  - {name: "🎧 网易云音乐解锁", server: 124.222.0.143, port: 6700, type: http, username: unblock-netease-music, password: unblock-netease-music}
-
+  - {name: "🔓 网易云音乐解锁", server: 124.222.0.143, port: 6700, type: http, tls: true, skip-cert-verify: true}
