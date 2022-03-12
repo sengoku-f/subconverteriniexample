@@ -110,6 +110,3 @@ external-controller: 127.0.0.1:9090
 #   DoT: 以 tls:// 开头的 DNS 服务器。拥有更高的安全性和查询效率，但端口有可能被管制或封锁。
 #   若要了解更多关于 DoH/DoT 相关技术，请自行查阅规范文档。
 
-
-proxies:
-  - {name: "🔓 网易云音乐解锁", server: 124.222.0.143, port: 6700, type: http, tls: true, skip-cert-verify: true}
