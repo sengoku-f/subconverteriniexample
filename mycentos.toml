@@ -1,7 +1,7 @@
 version = 1
 [custom]
-enable_rule_generator = false
-overwrite_original_rules = false
+enable_rule_generator = true
+overwrite_original_rules = true
 
 # 自定义基本配置文件的选项
 clash_rule_base = "https://raw.githubusercontent.com/sengoku-f/subconverteriniexample/master/config/mycentos.yml"
