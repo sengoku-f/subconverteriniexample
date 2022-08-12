@@ -1,0 +1,50 @@
+# 节点分组
+[[custom_groups]]
+name = "🔰 线路选择"
+type = "fallback"
+rule = ["[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇭🇰 香港节点"]
+url = "http://www.gstatic.com/generate_204"
+interval = 900
+tolerance = 100
+lazy = true
+
+[[custom_groups]]
+name = "🇭🇰 香港节点"
+type = "fallback"
+rule = ["(薯条.*(IEPL)).*(?=(香港|沪港))"]
+url = "http://www.gstatic.com/generate_204"
+interval = 900
+tolerance = 100
+lazy = true
+
+[[custom_groups]]
+name = "🇨🇳 台湾节点"
+type = "fallback"
+rule = ["^(?!.*(IEPL)).*(台|新北|彰化|TW|Taiwan)"]
+url = "http://www.gstatic.com/generate_204"
+interval = 900
+tolerance = 100
+lazy = true
+
+[[custom_groups]]
+name = "🐶 京东"
+type = "select"
+rule = ["[]DIRECT", "((?i)HttpProxy)", "[]🔰 线路选择", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]♻️ 负载均衡", "(港|台|新|日|美|加|韩)"]
+
+[[custom_groups]]
+name = "♻️ 负载均衡"
+type = "load-balance"
+rule = ["^(?!.*(IEPL)).*(台|新北|彰化|TW|Taiwan)"]
+interval = 100
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🕹 黑白名单"
+type = "select"
+rule = ["[]🔰 线路选择", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]DIRECT"]
+
+[[custom_groups]]
+name = "🕹 黑白名单"
+type = "select"
+rule = ["[]DIRECT", "[]🔰 线路选择", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点"]

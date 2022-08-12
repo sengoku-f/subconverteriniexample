@@ -1,0 +1,48 @@
+# 分流规则
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+
+[[rulesets]]
+group = "🔰 线路选择"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list"
+
+[[rulesets]]
+group = "🐶 京东"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/JD.list"
+
+[[rulesets]]
+group = "🐶 京东"
+ruleset = "https://raw.githubusercontent.com/sengoku-f/subconverteriniexample/master/surgerule/JD.list"
+
+[[rulesets]]
+group = "🎯 不走代理"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
+
+[[rulesets]]
+group = "🎯 不走代理"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
+
+[[rulesets]]
+group = "🎯 不走代理"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
+
+[[rulesets]]
+group = "🎯 不走代理"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
+
+[[rulesets]]
+group = "🎯 不走代理"
+ruleset = "[]GEOIP,CN"
+
+[[rulesets]]
+group = "🕹 黑白名单"
+ruleset = "[]FINAL"
