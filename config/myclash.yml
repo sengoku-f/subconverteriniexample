@@ -29,7 +29,7 @@ allow-lan: true
 # "[aaaa::a8aa:ff:fe09:57d8]"   绑定一个 IPv6 地址
 
 # 规则模式：Rule（规则） / Global（全局代理）/ Direct（全局直连）
-mode: Rule
+mode: rule
 
 # 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
 # 5 个级别：silent / info / warning / error / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
@@ -61,38 +61,38 @@ log-level: info
 #   '*.clash.dev': 127.0.0.1
 #   'alpha.clash.dev': '::1'
 
-dns:
-  enable: true
-  ipv6: false
-  listen: 127.0.0.1:53
-  enhanced-mode: fake-ip # redir-host 或 fake-ip
-  fake-ip-range: 198.18.0.1/16 # 如果你不知道这个参数的作用，请勿修改
-  fake-ip-filter: # fake-ip 白名单列表, 以下地址不会下发 fakeip 映射用于连接
-    - '*.lan'
-    - localhost.ptlogin2.qq.com
-  use-hosts: true # 是否查询系统 hosts
+# dns:
+#   enable: true
+#   ipv6: false
+#   listen: 127.0.0.1:53
+#   enhanced-mode: fake-ip # redir-host 或 fake-ip
+#   fake-ip-range: 198.18.0.1/16 # 如果你不知道这个参数的作用，请勿修改
+#   fake-ip-filter: # fake-ip 白名单列表, 以下地址不会下发 fakeip 映射用于连接
+#     - '*.lan'
+#     - localhost.ptlogin2.qq.com
+#   use-hosts: true # 是否查询系统 hosts
 
-  default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-    - 223.6.6.6
+#   default-nameserver:
+#     - 119.29.29.29
+#     - 223.5.5.5
+#     - 223.6.6.6
 
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+#   nameserver:
+#     - https://doh.pub/dns-query
+#     - https://dns.alidns.com/dns-query
 
-  fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
-    - https://cloudflare-dns.com/dns-query#proxy
-    - https://dns.google/dns-query#proxy
+#   fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
+#     - https://cloudflare-dns.com/dns-query#proxy
+#     - https://dns.google/dns-query#proxy
 
-  fallback-filter:
-    geoip: true # 默认
-    ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
-      - 240.0.0.0/4
-    domain:
-      - '+.google.com'
-      - '+.facebook.com'
-      - '+.youtube.com'
+#   fallback-filter:
+#     geoip: true # 默认
+#     ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
+#       - 240.0.0.0/4
+#     domain:
+#       - '+.google.com'
+#       - '+.facebook.com'
+#       - '+.youtube.com'
 
 # 1. clash DNS 请求逻辑：
 #   (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
