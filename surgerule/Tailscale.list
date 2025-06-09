@@ -1,0 +1,6 @@
+# Windows
+PROCESS-NAME,tailscale.exe
+PROCESS-NAME,tailscaled.exe
+# Mac
+PROCESS-NAME,tailscale
+PROCESS-NAME,tailscaled
