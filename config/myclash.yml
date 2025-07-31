@@ -56,44 +56,68 @@ log-level: info
 # # 实验性功能 hosts, 支持通配符 (例如 *.clash.dev 甚至 *.foo.*.example.com)
 # # 静态的域名 比 通配域名 具有更高的优先级 (foo.example.com 优先于 *.example.com)
 # # 注意: hosts 在 fake-ip 模式下不生效
-# hosts:
-#   '*.clash.dev': 127.0.0.1
-#   'alpha.clash.dev': '::1'
+hosts:
+  '*.clash.dev': 127.0.0.1
+  'alpha.clash.dev': '::1'
 
-# dns:
-#   enable: true
-#   ipv6: false
-#   listen: 127.0.0.1:53
-#   enhanced-mode: fake-ip # redir-host 或 fake-ip
-#   fake-ip-range: 198.18.0.1/16 # 如果你不知道这个参数的作用，请勿修改
-#   fake-ip-filter: # fake-ip 白名单列表, 以下地址不会下发 fakeip 映射用于连接
-#     - '*.lan'
-#     - localhost.ptlogin2.qq.com
-#   use-hosts: true # 是否查询系统 hosts
+dns:
+  enable: true
+  ipv6: true
+  listen: :53
+  enhanced-mode: fake-ip # redir-host 或 fake-ip
+  fake-ip-range: 198.18.0.1/16 # 如果你不知道这个参数的作用，请勿修改
+  fake-ip-filter: # fake-ip 白名单列表, 以下地址不会下发 fakeip 映射用于连接
+    - "100.64.*"
+    - "*.lan"
+    - "*.my.lan"
+    - "*.local"
+    - "*.arpa"
+    - time.*.com
+    - ntp.*.com
+    - time.*.com
+    - +.market.xiaomi.com
+    - localhost.ptlogin2.qq.com
+    - "*.msftncsi.com"
+    - www.msftconnecttest.com
 
-#   default-nameserver:
-#     - 119.29.29.29
-#     - 114.114.114.114
-#     - 223.5.5.5
+  fake-ip-filter-mode: blacklist
+  direct-nameserver-follow-policy: false
+  respect-rules: false
+  use-hosts: true # 是否查询系统 hosts
+  use-system-hosts: true
 
-#   nameserver:
-#     - https://doh.pub/dns-query
-#     - https://dns.alidns.com/dns-query
+  default-nameserver:
+    # - system
+    - 223.6.6.6
+    - 8.8.8.8
+    - 114.114.114.114
+    # - 2400:3200::1
+    # - 2001:4860:4860::8888
 
-#   fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
-#     - https://cloudflare-dns.com/dns-query#proxy
-#     # - https://dns.google/dns-query#proxy
+  nameserver:
+    - 8.8.8.8
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - tls://223.5.5.5
+  # fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
+    # - https://cloudflare-dns.com/dns-query#proxy
+    # - https://dns.google/dns-query#proxy
 
-#   fallback-filter:
-#     geoip: true # 默认
-#     ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
-#       - 240.0.0.0/4
-#       - 127.0.0.1/32
-#       - 0.0.0.0/32
-#     # domain:
-#     #   - '+.google.com'
-#     #   - '+.facebook.com'
-#     #   - '+.youtube.com'
+  # 备用域名解析服务器过滤
+  # 满足条件的将采用fallback的解析结果,或只采用fallback解析结果
+  fallback-filter:
+    geoip: true # 默认
+    geoip-code: CN
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+    ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
+      - 240.0.0.0/4
+      - 0.0.0.0/32
 
 # 1. clash DNS 请求逻辑：
 #   (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
